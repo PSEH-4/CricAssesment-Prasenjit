@@ -14,3 +14,7 @@ Port: 8080 (only th\is port is open to access the service over internet)
 But someone has taken the port 8080 already and the service is running at port 3000
 
 By Docker.
+
+The Jenkins Job is here:
+
+http://ec2-18-216-246-227.us-east-2.compute.amazonaws.com/jenkins/job/CricketScorePrasenjit/
