@@ -16,4 +16,8 @@ node {
        sh "docker login -u prasenjit -p Arpita@2018"
        sh "docker push prasenjit/cricassesment:v1.0"
     }
+    
+    stage('Deploy to staging') {
+        sh "docker run -d --rm -p 8080:8080 --name cricassesment prasenjit/cricassesment:v1.0"
+    }
 }
