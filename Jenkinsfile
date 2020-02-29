@@ -19,6 +19,7 @@ node {
     
     stage('Deploy to staging') {
     	sh "export DOCKER_HOST=tcp://18.216.246.227:2375"
+    	sh "docker kill cricassesment"
         sh "docker run -d --rm -p 3000:8080 --name cricassesment prasenjit/cricassesment:v1.0"
     }
 }
