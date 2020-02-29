@@ -31,6 +31,26 @@ public class MatchScoreServiceImpl implements MatchScoreService{
 		ResponseEntity<MatchDetails> response = myRestTemplate.getForEntity(serviceInvocationURL, MatchDetails.class);
 		MatchDetails matchDetails = response.getBody();
 		
+		String[] scoresArray = matchDetails.getScore().split("v");
+		
+		for(String score: scoresArray) {
+			String individualScore = score.trim();
+			String team1Score="";
+			String team2Score="";
+			
+			if(individualScore.contains(matchDetails.getTeam1())) {
+				team1Score = individualScore.replaceAll(matchDetails.getTeam1(), "").trim().split("/")[0];
+				
+			}
+			
+			if(individualScore.contains(matchDetails.getTeam2())) {
+				team2Score = individualScore.replaceAll(matchDetails.getTeam2(), "").trim().split("/")[0];
+				
+			}
+			
+			
+		}
+		
 		
 		ResultVO resultVO = new ResultVO();
 		
