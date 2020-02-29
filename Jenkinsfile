@@ -11,4 +11,9 @@ node {
 	stage('Docker build') {
        sh "docker build -t prasenjit/cricassesment:v1.0 ."
     }
+    
+    stage('Docker push') {
+       sh "docker login -u prasenjit -p Arpita@2018"
+       sh "docker push prasenjit/cricassesment:v1.0"
+    }
 }
