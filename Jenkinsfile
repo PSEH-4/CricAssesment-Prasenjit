@@ -7,4 +7,7 @@ node {
        sh "mvn clean package -DskipTests"
     }
 
+	stage('Docker build') {
+       sh "docker build -t prasenjit/cricassesment:v1.0 ."
+    }
 }
