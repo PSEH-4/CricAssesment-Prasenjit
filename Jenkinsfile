@@ -18,6 +18,7 @@ node {
     }
     
     stage('Deploy to staging') {
-        sh "docker run -d --rm -p 8080:8080 --name cricassesment prasenjit/cricassesment:v1.0"
+    	sh "export DOCKER_HOST=tcp://18.216.246.227:2375"
+        sh "docker run -d --rm -p 3000:8080 --name cricassesment prasenjit/cricassesment:v1.0"
     }
 }
